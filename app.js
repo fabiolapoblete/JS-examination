@@ -14,20 +14,23 @@ async function getData() {
     console.log("There was an error ", error);
   }
 }
-
+let solarsystemContainer = document.querySelector(".solarsystem-container");
 function renderDataToUI() {
   bodies.forEach((body) => {
     let bodyEl = document.createElement("article");
-    let solarsystemContainer = document.querySelector(".solarsystem-container");
-
+    // let pi = 3.14;
+    // let factor = 1 / 500;
     bodyEl.classList.add("body");
     bodyEl.setAttribute("id", body.id);
     bodyEl.innerHTML = `
         <a>${body.name}<a>
     `;
-    // console.log(body);
+
+    //style="width:calc(${body.circumference}/${pi}*${factor}px); height:calc(${body.circumference}/${pi}*${factor}px)"
 
     solarsystemContainer.appendChild(bodyEl);
+
+    body.HTML = bodyEl;
   });
 
   let clickedItems = document.querySelectorAll("article");
@@ -44,3 +47,13 @@ function renderDataToUI() {
 }
 
 getData();
+
+let searchInput = document.querySelector("[data-search]");
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  console.log(value);
+  bodies.forEach((body) => {
+    const isVisible = body.name.toLowerCase().includes(value);
+    body.HTML.classList.toggle("hide", !isVisible);
+  });
+});

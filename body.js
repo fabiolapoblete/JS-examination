@@ -1,34 +1,34 @@
 renderObjectToUI();
+
 function renderObjectToUI() {
-  console.log(window);
   let body = JSON.parse(localStorage.getItem("body"));
-  console.log(body);
-  console.log(body.name);
+  console.log(body.moons);
+  console.log(body.moons.map((moon) => moon));
 
   let objectContainer = document.querySelector(".body-section");
   objectContainer.innerHTML = `
-        <h1>${body.name}</h1>
-        <h2>${body.latinName}</h2>
+        <section>
+            <h1>${body.name}</h1>
+            <h2>${body.latinName}</h2>
+            <p>${body.desc}</p>
+        </section>
+        <section class=body-desc>
+            <section>
+                <H3>Omkrets <span>${body.circumference} km</span></H3>
+                <H3>Max temperatur <span>${body.temp.day} C</span></H3>
+            </section>
+            <section>
+                <H3>KM från solen <span>${body.distance} km</span></H3>
+                <H3>Min temperatur <span>${body.temp.night} C</span></H3>
+            </section>
+        </section>
+        <section>
+            <H3>Månar <span>${body.moons
+              .map(
+                (moon) => `<li>${moon}
+            </li>`
+              )
+              .join("|")}</span></H3>
+        </section>
   `;
 }
-
-// function renderCartToUI() {
-//   let cartItems = JSON.parse(localStorage.getItem("product"));
-//   console.log(cartItems, "added");
-
-//   cartItems.forEach((item) => {
-//     let cartItem = document.createElement("article");
-//     let cartContainer = document.querySelector(".products-inCart");
-
-//     cartItem.classList.add("product");
-
-//     cartItem.innerHTML = `
-//           <img src="img/${item.img}"/>
-//           <h3>${item.name}</h3>
-//           <h4>${item.pricePerHekto} kr/hg</h4>
-//           <button id="${item.SerialNumber}">Add to cart</button>
-//        `;
-
-//     cartContainer.appendChild(cartItem);
-//   });
-// }
