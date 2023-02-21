@@ -9,25 +9,19 @@
   </head>
   <body>
     <div class="wrapper-home">
-      <nav class="nav">
+      <nav class="nav-bar">
         <a href="home.html">Hem</a>
-        <a href="explore.html">Utforska</a>
+        <form name="frm" class="search">
+          <label for="search">Search body</label>
+          <input name="search" type="search" id="search" />
+        </form>
       </nav>
       <header class="header-home">
         <h1>Solsystemet</h1>
         <h2>Solaris</h2>
       </header>
-      <section class="planets">
-        <a id="sun">Sun</a>
-        <a id="planet-1"></a>
-        <a id="planet-2"></a>
-        <a id="planet-3"></a>
-        <a id="planet-4"></a>
-        <a id="planet-5"></a>
-        <a id="planet-6"></a>
-        <a id="planet-7"></a>
-        <a id="planet-8"></a>
-      </section>
+      <section class="solarsystem-container"></section>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>

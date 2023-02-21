@@ -18,27 +18,23 @@ let solarsystemContainer = document.querySelector(".solarsystem-container");
 function renderDataToUI() {
   bodies.forEach((body) => {
     let bodyEl = document.createElement("div");
-    // let pi = 3.14;
-    // let factor = 1 / 500;
     bodyEl.classList.add("body");
     bodyEl.classList.add(body.name);
     bodyEl.setAttribute("id", body.id);
-    // bodyEl.innerHTML = `
-    //     <a>${body.name}<a>
-    // `;
-
-    //style="width:calc(${body.circumference}/${pi}*${factor}px); height:calc(${body.circumference}/${pi}*${factor}px)"
+    bodyEl.innerHTML = `
+      <p class="body-name">${body.name}</p>
+    `;
 
     solarsystemContainer.appendChild(bodyEl);
 
     body.HTML = bodyEl;
   });
 
-  let clickedItems = document.querySelectorAll(".body");
+  let clickableItems = document.querySelectorAll(".body");
 
-  clickedItems.forEach((clickedItem) => {
-    clickedItem.addEventListener("click", (e) => {
-      let index = e.target.id;
+  clickableItems.forEach((clickableItem) => {
+    clickableItem.addEventListener("click", () => {
+      let index = clickableItem.id;
       localStorage.setItem("body", JSON.stringify(bodies[index]));
       window.location.href = "body.html";
       console.log(bodies[index]);
@@ -49,12 +45,13 @@ function renderDataToUI() {
 
 getData();
 
-let searchInput = document.querySelector("[data-search]");
+let searchInput = document.querySelector("#search");
 searchInput.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
   console.log(value);
   bodies.forEach((body) => {
     const isVisible = body.name.toLowerCase().includes(value);
     body.HTML.classList.toggle("hide", !isVisible);
+    body.HTML.classList.toggle("visible", isVisible);
   });
 });
