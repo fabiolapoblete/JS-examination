@@ -218,7 +218,7 @@ p {
     visibility: hidden;
 }
 
-.visible {
+.higlight {
     box-shadow: inset 0 0 18px #fff, 
     inset 6px 0 18px violet, 
     inset -6px 0 18px #0ff, 
@@ -226,4 +226,18 @@ p {
     inset -6px 0 30px #0ff, 
     0 0 18px #fff, -4px 
     0 18px violet, 4px 0 18px #0ff;
+
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

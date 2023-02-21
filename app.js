@@ -46,15 +46,22 @@ function renderDataToUI() {
 getData();
 
 let searchInput = document.querySelector("#search");
-searchInput.addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase();
+// searchInput.addEventListener("change", filterBodies);
+searchInput.addEventListener("input", filterBodies);
+
+function filterBodies() {
+  const value = searchInput.value.toLowerCase();
   console.log(value);
   bodies.forEach((body) => {
-    const isVisible = body.name.toLowerCase().includes(value);
-    if (isVisible) {
-      body.HTML.classList.add("visible");
-    } else {
-      body.HTML.classList.toggle("hide", !isVisible);
+    const match = body.name.toLowerCase().includes(value);
+    body.HTML.classList.toggle("hide", !match);
+
+    if (match) {
+      body.HTML.classList.add("higlight");
+    }
+
+    if (value === "") {
+      body.HTML.classList.remove("higlight");
     }
   });
-});
+}
