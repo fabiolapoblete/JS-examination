@@ -51,7 +51,10 @@ searchInput.addEventListener("input", (e) => {
   console.log(value);
   bodies.forEach((body) => {
     const isVisible = body.name.toLowerCase().includes(value);
-    body.HTML.classList.toggle("hide", !isVisible);
-    body.HTML.classList.toggle("visible", isVisible);
+    if (isVisible) {
+      body.HTML.classList.add("visible");
+    } else {
+      body.HTML.classList.toggle("hide", !isVisible);
+    }
   });
 });
