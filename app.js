@@ -17,14 +17,15 @@ async function getData() {
 let solarsystemContainer = document.querySelector(".solarsystem-container");
 function renderDataToUI() {
   bodies.forEach((body) => {
-    let bodyEl = document.createElement("article");
+    let bodyEl = document.createElement("div");
     // let pi = 3.14;
     // let factor = 1 / 500;
     bodyEl.classList.add("body");
+    bodyEl.classList.add(body.name);
     bodyEl.setAttribute("id", body.id);
-    bodyEl.innerHTML = `
-        <a>${body.name}<a>
-    `;
+    // bodyEl.innerHTML = `
+    //     <a>${body.name}<a>
+    // `;
 
     //style="width:calc(${body.circumference}/${pi}*${factor}px); height:calc(${body.circumference}/${pi}*${factor}px)"
 
@@ -33,7 +34,7 @@ function renderDataToUI() {
     body.HTML = bodyEl;
   });
 
-  let clickedItems = document.querySelectorAll("article");
+  let clickedItems = document.querySelectorAll(".body");
 
   clickedItems.forEach((clickedItem) => {
     clickedItem.addEventListener("click", (e) => {

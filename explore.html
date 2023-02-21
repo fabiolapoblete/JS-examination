@@ -10,29 +10,16 @@
   <body>
     <div class="wrapper-explore">
       <nav class="nav">
-        <a href="home.html">Hem</a>
-        <a href="explore.html">Utforska</a>
+        <a href="explore.html">Hem</a>
+        <form class="search">
+          <label for="search">Search body</label>
+          <input type="search" id="search" data-search />
+        </form>
       </nav>
-
-      <form class="search">
-        <label for="search">Search body</label>
-        <input type="search" id="search" data-search />
-      </form>
-
-      <!-- <div class="search-wrapper">
-        <label for="search">Search Users</label>
-        <input type="search" id="search" data-search>
-      </div>
-      <form>
-        <input type="text" id="search-input" />
-        <input
-          type="submit"
-          class="btn"
-          id="search-btn"
-          placeholder="explore"
-          value="SEARCH"
-        />
-      </form> -->
+      <header class="header-home">
+        <h1>Solsystemet</h1>
+        <h2>Solaris</h2>
+      </header>
       <section class="solarsystem-container"></section>
     </div>
     <script src="app.js"></script>
