@@ -13,7 +13,7 @@ function renderObjectToUI() {
             <h2>${body.latinName}</h2>
             <p>${body.desc}</p>
         </section>
-        <section class=body-desc>
+        <section class="body-desc">
             <section>
                 <H3>Omkrets <span>${body.circumference} km</span></H3>
                 <H3>Max temperatur <span>${body.temp.day} C</span></H3>

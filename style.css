@@ -48,6 +48,34 @@ p {
 
 }
 
+.body-section {
+    animation: fade-in 3s ease-in;
+}
+  
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    /* filter: blur(0); */
+    }
+}
+
+.body-desc h3 span{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(40, end) forwards;
+    animation-delay: 3s;
+}
+  
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
 /*---- NAV-bar styling ----*/
 .nav-bar {
     width: 100%;
@@ -86,6 +114,7 @@ p {
     background-color: #FFD029;
     border-radius: 50%;
     margin-left: -700px;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
 .Merkurius {
@@ -93,6 +122,7 @@ p {
     height: 14px;
     background-color: #888888;
     border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,.5);
 }
 
 .Venus {
@@ -100,6 +130,7 @@ p {
     height: 26px;
     background-color: #E7CDCD;
     border-radius: 50%;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,.5);
 }
 
 .Jorden {
@@ -107,6 +138,7 @@ p {
     height: 28px;
     background-color: #428ED4;
     border-radius: 50%;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,.5);
 }
 
 .Mars {
@@ -114,6 +146,7 @@ p {
     height: 14px;
     background-color: #EF5F5F;
     border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,.5);
 }
 
 .Jupiter {
@@ -121,6 +154,7 @@ p {
     height: 188px;
     background-color: #E29468;
     border-radius: 50%;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
 .Saturnus {
@@ -128,6 +162,7 @@ p {
     height: 144px;
     background-color: #C7AA72;
     border-radius: 50%;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
 .Uranus {
@@ -135,6 +170,7 @@ p {
     height: 66px;
     background-color: #C9D4F1;
     border-radius: 50%;
+    box-shadow: inset -15px -15px 20px rgba(0,0,0,.5);
 }
 
 .Neptunus {
@@ -142,6 +178,7 @@ p {
     height: 66px;
     background-color: #7A91A7;
     border-radius: 50%;
+    box-shadow: inset -10px -10px 15px rgba(0,0,0,.5);
 }
 
 .solarsystem-container {
@@ -219,25 +256,27 @@ p {
 }
 
 .higlight {
-    box-shadow: inset 0 0 18px #fff, 
-    inset 6px 0 18px violet, 
+    box-shadow: 
+    inset 0 0 18px #fff, 
+    inset 6px 0 18px #fff, 
     inset -6px 0 18px #0ff, 
-    inset 6px 0 30px violet, 
+    inset 6px 0 30px #fff, 
     inset -6px 0 30px #0ff, 
     0 0 18px #fff, -4px 
-    0 18px violet, 4px 0 18px #0ff;
+    0 18px #fff, 4px 0 18px #0ff;
 
-    animation-name: spin;
+    /* animation-name: spin;
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear; 
+    animation-timing-function: linear;  */
 }
 
-@keyframes spin {
+/* @keyframes spin {
     from {
         transform:rotate(0deg);
     }
     to {
         transform:rotate(360deg);
     }
-}
+} */
+
