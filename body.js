@@ -1,11 +1,12 @@
 renderObjectToUI();
 
 function renderObjectToUI() {
+  //Get and parse stored object/body from localstorage
   let body = JSON.parse(localStorage.getItem("body"));
-  console.log(body.moons);
-  console.log(body.moons.map((moon) => moon));
 
   let objectContainer = document.querySelector(".body-section");
+
+  //Styling and structure for presenting data about body
   objectContainer.innerHTML = `
         <section>
             <h1>${body.name}</h1>
@@ -25,6 +26,7 @@ function renderObjectToUI() {
         <section>
             <H3>Månar <span>${body.moons
               .map(
+                //Loops through the list and creates a li-element for each moon
                 (moon) => `<li>${moon}
             </li>`
               )
