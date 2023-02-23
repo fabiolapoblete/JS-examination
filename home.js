@@ -68,11 +68,11 @@ function filterBodies() {
     body.HTML.classList.toggle("hide", !match);
 
     if (match) {
-      body.HTML.classList.add("higlight"); //Adds styling for each body in search result
+      body.HTML.classList.add("highlight"); //Adds styling for each body in search result
     }
 
     if (value === "") {
-      body.HTML.classList.remove("higlight"); //If search bar is empty there is no styling, all bodies are visible
+      body.HTML.classList.remove("highlight"); //If search bar is empty there is no styling, all bodies are visible
     }
   });
 }
