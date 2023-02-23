@@ -27,3 +27,7 @@ Förslag på UI hittar ni [här](https://www.figma.com/file/Snw8n1gba7Mbk6TCLEAB
 API:et är låst med en API-nyckel. Alla GET-request utan en sådan kommer generar en `401`.
 
 För att få läsrättigheter måste du i din request bifoga headern `x-zocom` med en giltig API-nyckel.
+
+
+## Web APP
+https://kaleidoscopic-empanada-92990b.netlify.app/
