@@ -48,34 +48,6 @@ p {
 
 }
 
-.body-section {
-    animation: fade-in 3s ease-in;
-}
-  
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    /* filter: blur(0); */
-    }
-}
-
-.body-desc h3 span{
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 5s steps(40, end) forwards;
-    animation-delay: 3s;
-}
-  
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
 /*---- NAV-bar styling ----*/
 .nav-bar {
     width: 100%;
@@ -101,6 +73,22 @@ p {
     margin-left: 1rem;
 }
 
+/*---- Searh result styling ----*/
+.hide {
+    visibility: hidden;
+}
+
+.higlight {
+    box-shadow: 
+    inset 0 0 18px #fff, 
+    inset 6px 0 18px #fff, 
+    inset -6px 0 18px #0ff, 
+    inset 6px 0 30px #fff, 
+    inset -6px 0 30px #0ff, 
+    0 0 18px #fff, -4px 
+    0 18px #fff, 4px 0 18px #0ff;
+}
+
 /*---- Header styling ----*/
 .header-home {
     text-align: right;
@@ -108,6 +96,15 @@ p {
 }
 
 /*---- Solarsystem styling ----*/
+.solarsystem-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    margin: -120px 70px 0 0;
+}
+
 .Solen {
     width: 1000px;
     height: 1000px;
@@ -181,20 +178,17 @@ p {
     box-shadow: inset -10px -10px 15px rgba(0,0,0,.5);
 }
 
-.solarsystem-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: center;
-    margin: -120px 70px 0 0;
-}
-
+/*---- general styling for each body in solarsystem ----*/
 .body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.body:hover {
+    transform: scale(1.1);
+}
+
 .body-name {
     rotate: -45deg;
     margin-bottom: 20rem;
@@ -202,10 +196,6 @@ p {
 
 .Solen .body-name {
     margin: 0 0 500px 1000px
-}
-
-.body:hover {
-    transform: scale(1.1);
 }
 
 /*---- Body page styling ----*/
@@ -217,15 +207,16 @@ p {
     margin-bottom: 4rem;
 }
 
-.body-section {
+.fact-section {
     max-width: 640px;
+    animation: fade-in 3s ease-in;
 }
 
-.body-section h1, h2 {
+.fact-section h1, h2 {
     text-transform: uppercase;
 }
 
-.body-section h3 span {
+.fact-section h3 span {
     font-family: 'Roboto Condensed', sans-serif;
     letter-spacing: 3px;    
     display: flex;
@@ -249,34 +240,26 @@ p {
     flex-direction: column;
     gap: 2rem;
 } 
-
-/*---- Searh result styling ----*/
-.hide {
-    visibility: hidden;
+  
+.body-desc h3 span{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(40, end) forwards;
+    animation-delay: 3s;
 }
 
-.higlight {
-    box-shadow: 
-    inset 0 0 18px #fff, 
-    inset 6px 0 18px #fff, 
-    inset -6px 0 18px #0ff, 
-    inset 6px 0 30px #fff, 
-    inset -6px 0 30px #0ff, 
-    0 0 18px #fff, -4px 
-    0 18px #fff, 4px 0 18px #0ff;
-
-    /* animation-name: spin;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;  */
+/*---- Animation for fade in and typing effect ----*/
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    }
 }
 
-/* @keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-} */
-
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}

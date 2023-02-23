@@ -1,10 +1,12 @@
+//Code for body page
+
 renderObjectToUI();
 
 function renderObjectToUI() {
   //Get and parse stored object/body from localstorage
   let body = JSON.parse(localStorage.getItem("body"));
 
-  let objectContainer = document.querySelector(".body-section");
+  let objectContainer = document.querySelector(".fact-section");
 
   //Styling and structure for presenting data about body
   objectContainer.innerHTML = `

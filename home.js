@@ -41,10 +41,10 @@ function renderDataToUI() {
   });
 
   //Add an eventlistener to each body
-  eventlistenerToBody();
+  bodyOnClick();
 }
 
-function eventlistenerToBody() {
+function bodyOnClick() {
   //Select all bodies and make them clickable
   let clickableItems = document.querySelectorAll(".body");
 
@@ -72,7 +72,7 @@ function filterBodies() {
     }
 
     if (value === "") {
-      body.HTML.classList.remove("higlight"); //If search bar is empty there is no styling, and all bodies are visible
+      body.HTML.classList.remove("higlight"); //If search bar is empty there is no styling, all bodies are visible
     }
   });
 }
