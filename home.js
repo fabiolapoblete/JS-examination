@@ -63,16 +63,29 @@ function bodyOnClick() {
 function filterBodies() {
   const value = searchInput.value.toLowerCase();
 
+  // let listOfBodies = document.querySelectorAll(".highlight");
+  // let listOfHiddenBodies = document.querySelectorAll(".hide");
+  let noResult = document.querySelector(".alert");
+
   bodies.forEach((body) => {
     const match = body.name.toLowerCase().includes(value);
-    body.HTML.classList.toggle("hide", !match);
 
-    if (match) {
-      body.HTML.classList.add("highlight"); //Adds styling for each body in search result
-    }
+    body.HTML.classList.toggle("hide", !match);
+    body.HTML.classList.toggle("highlight", match);
 
     if (value === "") {
       body.HTML.classList.remove("highlight"); //If search bar is empty there is no styling, all bodies are visible
+    }
+
+    let listOfBodies = document.querySelectorAll(".highlight");
+    let listOfHiddenBodies = document.querySelectorAll(".hide");
+
+    //Logic for when there are no search results
+    if (listOfBodies.length == 0 && listOfHiddenBodies.length == 9) {
+      console.log(listOfHiddenBodies);
+      noResult.innerText = "Din sökning gav inget resultat";
+    } else if (listOfHiddenBodies.length < 9) {
+      noResult.innerHTML = "";
     }
   });
 }

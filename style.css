@@ -87,6 +87,7 @@ p {
     gap: 2rem;
     align-items: center;
     margin: -120px 70px 0 0;
+    position: relative; 
 }
 
 .Solen {
@@ -234,6 +235,13 @@ p {
 }
 
 /*---- Searh result styling ----*/
+.alert {
+    position: absolute;
+    top: -50px;
+    left: 70px;
+    width: 400px;
+}
+
 .hide {
     visibility: hidden;
 }
