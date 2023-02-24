@@ -63,10 +63,6 @@ function bodyOnClick() {
 function filterBodies() {
   const value = searchInput.value.toLowerCase();
 
-  // let listOfBodies = document.querySelectorAll(".highlight");
-  // let listOfHiddenBodies = document.querySelectorAll(".hide");
-  let noResult = document.querySelector(".alert");
-
   bodies.forEach((body) => {
     const match = body.name.toLowerCase().includes(value);
 
@@ -77,14 +73,15 @@ function filterBodies() {
       body.HTML.classList.remove("highlight"); //If search bar is empty there is no styling, all bodies are visible
     }
 
-    let listOfBodies = document.querySelectorAll(".highlight");
-    let listOfHiddenBodies = document.querySelectorAll(".hide");
+    let noResult = document.querySelector(".alert");
+    let highlightedBodies = document.querySelectorAll(".highlight");
+    let hiddenBodies = document.querySelectorAll(".hide");
 
     //Logic for when there are no search results
-    if (listOfBodies.length == 0 && listOfHiddenBodies.length == 9) {
-      console.log(listOfHiddenBodies);
+    if (highlightedBodies.length == 0 && hiddenBodies.length == 9) {
+      console.log(hiddenBodies);
       noResult.innerText = "Din sökning gav inget resultat";
-    } else if (listOfHiddenBodies.length < 9) {
+    } else if (hiddenBodies.length < 9) {
       noResult.innerHTML = "";
     }
   });
